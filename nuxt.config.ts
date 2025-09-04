@@ -34,5 +34,9 @@ export default defineNuxtConfig({
 		'/about': { ssr: false }, // SPA-only
 		'/blog': { prerender: true }, // SSG
 	},
+
+	nitro: {
+		static: true,
+	},
 });
 // '/contact': { isr: 60 }, // ISR (revalida a cada 60 segundos)

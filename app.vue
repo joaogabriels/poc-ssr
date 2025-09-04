@@ -1,7 +1,5 @@
 <template>
 	<main class="main">
-		<Navbar />
-
 		<h1>POC SSR - Nuxt 3 + PrimeVue</h1>
 
 		<p>

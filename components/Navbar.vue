@@ -46,9 +46,6 @@ const activeRoute = computed(() => {
 
 <style scoped lang="scss">
 .navbar {
-  margin-top: 16px;
-  margin-right: 16px;
-  margin-left: 16px;
   justify-content: center;
 }
 </style>

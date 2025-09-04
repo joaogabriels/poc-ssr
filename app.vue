@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main class="main">
 		<Navbar />
 
 		<h1>POC SSR - Nuxt 3 + PrimeVue</h1>
@@ -22,7 +22,9 @@
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-const generatedAt = useState(() => new Date());
+const route = useRoute();
+
+const generatedAt = useState(`${route.path}-generated_at`,() => new Date());
 const relativeDate = ref('');
 
 const { data } = await useFetch('/api/time');
@@ -38,4 +40,8 @@ onMounted(() => {
 
 <style lang="scss">
 @use '~/assets/scss/main.scss';
+
+.main {
+	padding: 24px 80px;
+}
 </style>

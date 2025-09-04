@@ -6,7 +6,7 @@ A ideia é evidenciar como o **SSR (Server-Side Rendering)**, **ISR (Incremental
 
 ---
 
-## 🚀 Rotas disponíveis
+## Rotas disponíveis
 
 Você pode acessar as diferentes páginas para ver o comportamento de cada modo de renderização:
 

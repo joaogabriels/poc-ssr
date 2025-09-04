@@ -33,6 +33,6 @@ export default defineNuxtConfig({
 	routeRules: {
 		'/about': { ssr: false }, // SPA-only
 		'/blog': { prerender: true }, // SSG
-		'/contact': { isr: 60 }, // ISR (revalida a cada 60 segundos)
 	},
 });
+// '/contact': { isr: 60 }, // ISR (revalida a cada 60 segundos)

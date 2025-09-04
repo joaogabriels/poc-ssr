@@ -1,10 +1,29 @@
-# Nuxt Minimal Starter
+# POC SSR com o nuxt 3
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este projeto é uma **prova de conceito (POC)** para demonstrar os diferentes modos de renderização disponíveis no **Nuxt 3**, utilizando `routeRules` e integração com uma rota de API (`/api/time`).
+
+A ideia é evidenciar como o **SSR (Server-Side Rendering)**, **ISR (Incremental Static Regeneration)**, **SSG (Static Site Generation)** e **SPA-only** funcionam na prática, além de mostrar como o Nuxt facilita o desenvolvimento de aplicações híbridas.
+
+---
+
+## 🚀 Rotas disponíveis
+
+Você pode acessar as diferentes páginas para ver o comportamento de cada modo de renderização:
+
+- [Home (ISR – atualizado a cada 120s)](http://poc-ssr-five.vercel.app/)
+- [Dynamic (sem cache, sempre atualizado)](http://poc-ssr-five.vercel.app/dynamic)
+- [Static (cacheado no primeiro acesso, sem rebuild)](http://poc-ssr-five.vercel.app/static)
+- [Prerendered (pré-renderizado no deploy)](http://poc-ssr-five.vercel.app/prerendered)
+- [SPA (apenas client-side, SSR desativado)](http://poc-ssr-five.vercel.app/spa)
+
+Além disso, a API pode ser acessada diretamente:
+- [API Time](http://poc-ssr-five.vercel.app/api/time)
+
+---
 
 ## Setup
 
-Make sure to install dependencies:
+Instale as dependências do projeto:
 
 ```bash
 # npm
@@ -20,9 +39,9 @@ yarn install
 bun install
 ```
 
-## Development Server
+## Servidor de Desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Inicie o servidor de desenvolvimento em `http://localhost:3000`:
 
 ```bash
 # npm
@@ -38,9 +57,11 @@ yarn dev
 bun run dev
 ```
 
-## Production
+É recomendado acessar o arquivo de configuração `nuxt.config.ts` para entender como os diferentes modos de renderização foram configurados utilizando `routeRules`.
 
-Build the application for production:
+## Produção
+
+Essa aplicação foi disponibilizada para produção utilizando a [Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt). Você pode executar localmente para testes rodando o build e preview.
 
 ```bash
 # npm
@@ -56,20 +77,12 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+E depois:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+node .output/server/index.mjs
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Documentação
+
+Visite a [documentação oficial do Nuxt 3](https://nuxt.com/docs) para mais informações.

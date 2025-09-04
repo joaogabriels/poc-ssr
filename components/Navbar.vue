@@ -22,16 +22,20 @@ const ROUTES = [
     label: "Home",
   },
   {
-    path: "/about",
-    label: "Sobre",
+    path: "/dynamic",
+    label: "Dinâmica",
   },
   {
-    path: "/blog",
-    label: "Blog",
+    path: "/static",
+    label: "Estático",
   },
   {
-    path: "/contact",
-    label: "Contato",
+    path: "/prerendered",
+    label: "Pré-renderizado",
+  },
+  {
+    path: "/spa",
+    label: "SPA",
   },
 ];
 

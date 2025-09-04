@@ -19,8 +19,6 @@ export default defineNuxtConfig({
 		},
 	},
 
-	ssr: true, // SSR global habilitado
-
 	app: {
 		head: {
 			title: 'Nuxt SSR POC',
@@ -31,12 +29,23 @@ export default defineNuxtConfig({
 	},
 
 	routeRules: {
-		'/about': { ssr: false }, // SPA-only
-		'/blog': { prerender: true }, // SSG
+		// é atualizado a cada 120 segundos
+		'/**': { isr: 120 },
+
+		// sempre atualizado
+		'/dynamic': { isr: false },
+
+		// cacheado no acesso
+		'/static': { isr: true },
+
+		// cacheado na construção
+		'/prerendered': { prerender: true },
+
+		// apenas no cliente
+		'/spa': { ssr: false },
 	},
 
-	nitro: {
-		static: true,
+	runtimeConfig: {
+		nitro: { envPrefix: 'VERCEL_' },
 	},
 });
-// '/contact': { isr: 60 }, // ISR (revalida a cada 60 segundos)

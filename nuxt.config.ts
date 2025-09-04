@@ -1,23 +1,9 @@
-import Aura from '@primeuix/themes/aura';
-
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 
 	devtools: { enabled: true },
 
-	modules: ['@nuxt/eslint', '@nuxt/fonts', '@primevue/nuxt-module'],
-
-	primevue: {
-		options: {
-			theme: {
-				preset: Aura,
-
-				options: {
-					darkModeSelector: '.dark-mode',
-				},
-			},
-		},
-	},
+	modules: ['@nuxt/eslint', '@nuxt/fonts'],
 
 	app: {
 		head: {
@@ -29,19 +15,19 @@ export default defineNuxtConfig({
 	},
 
 	routeRules: {
-		// é atualizado a cada 120 segundos
+		// É atualizado a cada 120 segundos
 		'/**': { isr: 120 },
 
-		// sempre atualizado
+		// Sempre atualizado
 		'/dynamic': { isr: false },
 
-		// cacheado no acesso
+		// Cacheado no acesso (sem rebuild)
 		'/static': { isr: true },
 
-		// cacheado na construção
+		// Cacheado no deploy
 		'/prerendered': { prerender: true },
 
-		// apenas no cliente
+		// Apenas client-side
 		'/spa': { ssr: false },
 	},
 

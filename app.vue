@@ -3,14 +3,16 @@
 		<div class="poc__card">
 			<h1 class="poc__title">POC SSR – Nuxt</h1>
 
-			<p v-if="generatedAt" class="poc__timestamp">
-				Gerado em:
-				{{
-					format(generatedAt, "dd 'de' MMMM 'de' yyyy', às' HH:mm:ss", {
-						locale: ptBR,
-					})
-				}}
-			</p>
+			<client-only>
+				<p>
+					Gerado em:
+					{{
+						format(generatedAt, "dd 'de' MMMM 'de' yyyy', às' HH:mm:ss", {
+							locale: ptBR,
+						})
+					}}
+				</p>
+			</client-only>
 
 			<hr class="poc__divider" />
 

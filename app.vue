@@ -3,17 +3,6 @@
 		<div class="poc__card">
 			<h1 class="poc__title">POC SSR – Nuxt</h1>
 
-			<client-only>
-				<p>
-					Gerado em:
-					{{
-						format(generatedAt, "dd 'de' MMMM 'de' yyyy', às' HH:mm:ss", {
-							locale: ptBR,
-						})
-					}}
-				</p>
-			</client-only>
-
 			<hr class="poc__divider" />
 
 			<h2 class="poc__message">
@@ -26,12 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
-const route = useRoute();
-const generatedAt = useState(`${route.path}-generated_at`, () => new Date());
-
 const { data } = await useFetch('/api/time');
 </script>
 
